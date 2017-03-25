@@ -1,0 +1,115 @@
+.navbar {
+    font-size: 25pt;
+    background-color: #428bca;
+    border-color: transparent;
+    margin-bottom: 0px;
+    height: 13vh;
+}
+
+.navbar-default .navbar-brand {
+    font-size: 30pt;
+    color: white;
+    padding-top: 5vh;
+}
+
+.nav.navbar-nav.navbar-right li a {
+    padding-top: 5.5vh;
+    color: white;
+}
+
+.navbar-default .navbar-brand img{
+    height: 18vh;
+    padding-top: 0;
+    margin-top: -7vh;
+}
+
+#signup-form {
+    margin-top: 2vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.title {
+    margin-left: 10vw;
+}
+
+
+.error-message {
+    margin-left: 10vw;
+}
+
+#accept-div {
+    text-align: right;
+    position: relative;
+    padding-left: 0;
+}
+
+#reject-div {
+    text-align: left;
+    position: relative;
+    padding-left: 0;
+}
+
+#accept {
+    height: 87vh;
+    width: 25vw;
+    font-family: roboto;
+    font-size: 50pt;
+}
+
+#reject {
+    height: 87vh;
+    width: 25vw;
+    font-family: roboto;
+    font-size: 50pt;
+}
+
+#swipe-pic {
+    text-align: center;
+    font-family: roboto;
+    padding-left: 0;
+}
+
+#main-pic {
+    max-height: 60vh;
+    max-width: 50vw;
+    padding-left: 0;
+}
+#firstJum {
+    background-image: url("http://www.hvac2000.com/wp-content/uploads/2016/10/Dog-images-5.jpg");
+    background-size: cover;
+    height: 75vh;
+    color: white;
+    margin-bottom: 0;
+}
+
+#firstJumText {
+    padding-top: 4vh;
+}
+
+#secondJum {
+    background-image: url("http://www.carmaa-petadoption.com/wp-content/uploads/Fostering-Kittens-Header.png");
+    background-size: cover;
+    height: 75vh;
+    margin-bottom: 0;
+}
+
+#secondJumText {
+    padding-top: 53vh;
+    text-align: center;
+    color: white;
+}
+
+#signTile {
+    padding-left: 15%;
+}
+
+#memberImage {
+    max-height: 50vh;
+    max-width: 30vw;
+    height: 50vh;
+}
+
+#memberCont {
+    padding-bottom: 30px;
+}
