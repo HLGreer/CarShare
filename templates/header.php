@@ -25,27 +25,8 @@
             <a class="navbar-brand" href="../public_html/">PetSwipe</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="../public_html/index.php">Home</a></li>
-                <?php
-                if($_SESSION['user'] == null){
-                    $string = "../public_html/login.php";
-                    echo "<li><a href=$string>Login</a></li>";
-                }
-                else {
-                    $string = "../public_html/member.php";
-                    echo "<li><a href=$string>Member Area</a></li>";
-                }
-                ?>
-                <li><a href="../public_html/swipe.php">Swipe</a></li>
-                <?php
-                if($_SESSION['user'] != null) {
-                    $string = "../public_html/logout.php";
-                    echo "<li><a href=$string>Logout</a></li>";
-                }
-                ?>
-                <li><a href="../public_html/test.php">Test</a></li>
-            </ul>
+
+
         </div>
     </div>
 </nav>
