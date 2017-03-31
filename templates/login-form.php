@@ -7,7 +7,7 @@ if(isset($values['message'])) {
 <div id="signup-form">
     <form action="../public_html/login-verify.php" method="post">
         <div class="form-group">
-            <label for="Username">Username</label>
+            <label for="Username">Email</label>
             <input class="form-control" type="text" placeholder="Username" name="username">
         </div>
         <div class="form-group">
