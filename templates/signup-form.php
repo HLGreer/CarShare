@@ -1,8 +1,13 @@
 <div id="signTitle">
     <h1>Sign Up Now!</h1>
 </div>
+
+<!--
+Need to generate a memberID
+-->
+
 <div id="signup-form">
-    <form action="../public_html/new_member.php" method="post">
+    <div action="../public_html/signup-verify.php" method="post">
         <div class="form-group">
             <label for="Firstname">First Name</label>
             <input class="form-control" type="text" placeholder="John" name="first">
@@ -10,10 +15,6 @@
         <div class="form-group">
             <label for="Lastname">Last Name</label>
             <input class="form-control" type="text" placeholder="Doe" name="last">
-        </div>
-        <div class="form-group">
-            <label for="Username">Username</label>
-            <input class="form-control" type="text" placeholder="Username" name="username">
         </div>
         <div class="form-group">
             <label for="Password">Password</label>
@@ -32,26 +33,12 @@
             <input class="form-control" type="text" placeholder="123 Anywhere Street" name="address">
         </div>
         <div class="form-group">
-            <label for="Province">Province</label>
-            <input class="form-control" type="text" placeholder="ON" name="province">
+            <label for="phoneNum">Phone Number</label>
+            <input class="form-control" type="text" placeholder="5558675309" name="phoneNum">
         </div>
         <div class="form-group">
-            <label for="Postal">Postal Code</label>
-            <input class="form-control" type="text" placeholder="Zip Code" name="postal">
-        </div>
-        <div class="form-group">
-            <label for="Pet">I would like to adopt a (Dog, Cat, Rabbit)</label>
-            <input class="form-control" type="text" placeholder="Dog" name="pet">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="medical"> I'm open to adopting a pet with medical issues.
-            </label>
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" name="experience"> I have owned a pet before.
-            </label>
+            <label for ="licenceNum">License Number</label>
+            <input type="text" name="licenceNum" placeholder="D61014070660905">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
