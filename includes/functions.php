@@ -35,4 +35,8 @@ function render($template, $values, $filename) {
             trigger_error("Template does not exist.", E_USER_ERROR);
         }
     }
+
+    function connect() {
+
+    }
 }
