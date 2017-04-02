@@ -23,12 +23,22 @@
                 <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="../public_html/">KTCS CarShare</a>
-            <?php if (isset($_SESSION['memberID'])) {
-                echo '<a class="navbar-brand" href="../public_html/logout.php">Logout</a>';
-            }?>
-
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <?php if (isset($_SESSION['memberID'])) {
+                echo '<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../public_html/logout.php">Logout</a></li>
+                </ul>';}
+            else{
+                echo'<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../public_html/login.php">Login</a></li>
+                </ul>';
+
+                echo'<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../public_html/signup.php">Sign Up</a></li>
+                </ul>';
+            }?>
 
         </div>
     </div>

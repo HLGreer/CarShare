@@ -8,7 +8,7 @@ function getDB()
 {
     $dbhost='localhost';
     $dbuser='root';
-    $dbpass='mysql';
+    $dbpass='';
     $dbname='KTownCars';
 
     try {
