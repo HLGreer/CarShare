@@ -7,7 +7,7 @@ Need to generate a memberID
 -->
 
 <div id="signup-form">
-    <div action="../public_html/signup-verify.php" method="post">
+    <form action="../public_html/signup-verify.php" method="post">
         <div class="form-group">
             <label for="Firstname">First Name</label>
             <input class="form-control" type="text" placeholder="John" name="first">

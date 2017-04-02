@@ -4,7 +4,7 @@ function render($template, $values, $filename) {
     $exempt_urls = ["login.php", "index.php", "signup.php", "new_member.php", "login-verify.php", "functions.php", "logout.php"];
     // Catch if the user is trying to access a page they need to be logged in for
     if (!isset($_SESSION['memberID']) && !in_array(basename($filename), $exempt_urls)) {
-        echo "here";
+        //echo "here";
         $values['title'] = "Login";
         $values['message'] = "Sorry, you have to login to view that page.";
         if (file_exists("../templates/$template")) {

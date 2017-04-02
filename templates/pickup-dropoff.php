@@ -5,7 +5,6 @@
 Should only show form if member has made a reservation!
 -->
 <form>
-    <input>
     Dropoff or Pickup? <br>
     <input type="radio" name="pord" value="dropoff">Dropoff <br>
     <input type="radio" name="pord" value="pickup">Pickup <br>
