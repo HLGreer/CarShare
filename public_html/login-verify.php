@@ -20,7 +20,7 @@ if ((isset($_POST['email'])) & (isset($_POST['password']))) {
             echo "Hello";
             $_SESSION['memberID'] = $data->memberID; // Storing user session value
             echo $_SESSION['memberID'];
-            header('Location: memberHome.php');
+            //header('Location: memberHome.php');
         } else {
             echo "The count is " . $count;
         }
@@ -29,6 +29,7 @@ if ((isset($_POST['email'])) & (isset($_POST['password']))) {
     }
 } else {
     header('Location: login.php');
+    echo "hello";
 }
 
 
