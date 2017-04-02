@@ -11,9 +11,4 @@
     <h4>We should have options to reserve a car, make a comment, view reservations and other stuff here!</h4>
 </div>
 
-<div>
-    <form action="../public_html/logout.php" method="post">
-        <button type="submit" class="btn btn-default">Logout</button>
-    </form>
-</div>
 
