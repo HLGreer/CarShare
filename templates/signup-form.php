@@ -34,11 +34,11 @@ Need to generate a memberID
         </div>
         <div class="form-group">
             <label for="phoneNum">Phone Number</label>
-            <input class="form-control" type="text" placeholder="8675309" name="phoneNum">
+            <input class="form-control" type="text" placeholder="5558675309" name="phoneNum">
         </div>
         <div class="form-group">
             <label for ="licenceNum">License Number</label>
-            <input type="text" name="licenceNum">
+            <input type="text" name="licenceNum" placeholder="D61014070660905">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
