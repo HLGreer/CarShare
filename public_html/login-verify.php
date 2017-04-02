@@ -20,13 +20,15 @@ if ((isset($_POST['email'])) & (isset($_POST['password']))) {
             echo "Hello";
             $_SESSION['memberID'] = $data->memberID; // Storing user session value
             echo $_SESSION['memberID'];
-
+            header('Location: memberHome.php');
         } else {
             echo "The count is " . $count;
         }
     } catch (PDOException $e) {
         echo '{"error":{"text":' . $e->getMessage() . '}}';
     }
+} else {
+    header('Location: login.php');
 }
 
 
