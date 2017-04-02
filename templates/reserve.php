@@ -7,8 +7,8 @@
         <label for="rentDuration">For how many days?</label>
             <input type="number" name="rentDuration" min="1">
         <label for="lot">Location(s)</label>
-            <input type="checkbox" name="lot" value="1"> Lot 1 <br>
-            <input type="checkbox" name="lot" value="2"> Lot 2 <br>
+            <input type="checkbox" name="lot" value="1"> Lot 1
+            <input type="checkbox" name="lot" value="2"> Lot 2
             <input type="checkbox" name="lot" value="3"> Lot 3 <br>
         <input type="reset" value="Reset">
         <input type="submit" value="Apply">
