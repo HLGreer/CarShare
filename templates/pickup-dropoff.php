@@ -1,7 +1,8 @@
-<h2>Pick up / Drop off</h2>
+
+<h1>Pick up / Drop off</h1>
 
 <!--
-Same form
+Should only show form if member has made a reservation!
 -->
 <form>
     <input>
