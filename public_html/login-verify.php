@@ -22,7 +22,7 @@ if ((isset($_POST['email'])) & (isset($_POST['password']))) {
             echo $_SESSION['memberID'];
             //header('Location: memberHome.php');
         } else {
-            echo "The count is " . $count;
+            header('Location: login.php'); // TODO: We should add an error message if redirect to login.php
         }
     } catch (PDOException $e) {
         echo '{"error":{"text":' . $e->getMessage() . '}}';
