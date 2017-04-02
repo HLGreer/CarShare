@@ -1,8 +1,5 @@
 <?php
-if(isset($values['message'])) {
-    $msg = "error-message";
-    echo "<p class=$msg>" . $values['message'] . "</p>";
-}
+
 ?>
 <div id="signup-form">
     <form action="../public_html/login-verify.php" method="post">
