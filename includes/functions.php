@@ -11,11 +11,15 @@ function render($template, $values, $filename) {
             if ($values != NULL){
                 extract($values);
             }
+            header('Location: login.php');
+            /*
             require("../templates/header.php");
 
             require("../templates/login-form.php");
 
             require("../templates/footer.php");
+            */
+
         }
         else {
             trigger_error("Template does not exist.", E_USER_ERROR);
