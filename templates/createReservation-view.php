@@ -14,3 +14,4 @@
         <input type="submit" value="Apply">
     </form>
 This currently only works for the pick up Date.
+Need to only select one lot at a time (this gets too difficult otherwise.)
