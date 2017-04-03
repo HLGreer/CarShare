@@ -10,7 +10,16 @@ try {
     $query = $db->prepare("SELECT VIN from reservation WHERE reservationNUM=:reservationNUM;");
     $query->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $query->execute();
-
+    $data = $query->fetchAll(PDO::FETCH_OBJ);
+    $count = $query->rowCount();
+    //echo $count;
+    $db = null;
+    if ($count == 1) {// there should only be one matching entry
+        $VIN = $data;
+    } else {
+        echo "Uh oh... invalid reservation number";
+        echo "*redirects you -SOMEWHERE-*";
+    }
 
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, NULL) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
@@ -20,9 +29,7 @@ try {
     //session holds memberID
     $insert->bindParam(":memberID", $_SESSION['memberID'], PDO::PARAM_INT);
 
-
-
-    $insert->bindParam(":VIN", $_POST['VIN'], PDO::PARAM_INT);
+    $insert->bindParam(":VIN", $VIN, PDO::PARAM_INT);
     $result = $insert->execute();
 
     if ($result) {
