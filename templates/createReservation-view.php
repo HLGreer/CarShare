@@ -6,12 +6,18 @@
             <input type="date" name="resDate">
         <label for="rentDuration">For how many days?</label>
             <input type="number" name="rentDuration" min="1">
-        <label for="lot">Location(s)</label>
-            <input type="checkbox" name="lot" value="1"> Lot 1
-            <input type="checkbox" name="lot" value="2"> Lot 2
-            <input type="checkbox" name="lot" value="3"> Lot 3 <br>
+        <div class="form-group">
+            <label for="sel1">Select list:</label>
+            <select class="form-control" id="sel1" name="lot">
+                <option value="1">Lot 1</option>
+                <option value="2">Lot 2</option>
+                <option value="3">Lot 3</option>
+                <option value="4">Lot 4</option>
+            </select>
+        </div>
         <input type="reset" value="Reset">
         <input type="submit" value="Apply">
     </form>
+
 This currently only works for the pick up Date.
 Need to only select one lot at a time (this gets too difficult otherwise.)
