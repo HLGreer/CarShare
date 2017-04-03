@@ -16,14 +16,14 @@ try {
     //echo $count;
     $db = null;
     if ($count == 1) {// there should only be one matching entry
-        $VIN = $data;
+        $VIN = $data[0];
     } else {
         echo "Uh oh... invalid reservation number";
         echo "redirect~~~";
     }
     $db = getDB();
     echo "made it past query";
-    $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, NULL) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating);");
+    $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, commentReply) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating, NULL);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $insert->bindParam(":rating", $_POST['rating'], PDO::PARAM_INT);
     $insert->bindParam(":commentText", $_POST['commentText'], PDO::PARAM_STR);
