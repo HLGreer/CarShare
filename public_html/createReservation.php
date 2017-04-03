@@ -5,8 +5,8 @@ require("../includes/config.php");
  */
 
 //if (isset($_POST['location']) & isset($_POST['resDate'])) {
-if (isset($_POST['pickupDate'])) {
-    echo "Me";
+if (isset($_POST['resDate'])) {
+    echo $_POST['resDate'];
     // If the page has the location and the date requested to make
     // a reservation, you can try to execute an SQL query to
     // pull up all the cars available on that day.
@@ -16,8 +16,8 @@ if (isset($_POST['pickupDate'])) {
     try {
         $db = getDB();
         //$hash_password= hash('sha256', $dbpass); //Password encryption
-        $query = $db->prepare("SELECT DISTINCT * FROM car LEFT OUTER JOIN (SELECT * FROM reservation WHERE ((pickUpDate > '2017-04-02' AND dropOffDate > '2017-04-02') OR (pickUpDate < '2017-04-02' AND dropOffDate < '2017-04-02'))) tempTable ON car.VIN = tempTable.VIN GROUP BY car.VIN;");
-        //$query->bindParam("email", $_POST['email'], PDO::PARAM_STR);
+        $query = $db->prepare("SELECT DISTINCT * FROM car LEFT OUTER JOIN (SELECT * FROM reservation WHERE ((pickUpDate > :resDate AND dropOffDate > :resDate) OR (pickUpDate < :resDate AND dropOffDate < :resDate))) tempTable ON car.VIN = tempTable.VIN GROUP BY car.VIN;");
+        $query->bindParam("resDate", $_POST['resDate'], PDO::PARAM_STR);
        // $query->bindParam("password", $_POST['password'], PDO::PARAM_STR);
         $query->execute();
         echo "hello" . "<br>";

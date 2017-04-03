@@ -3,7 +3,7 @@
     <form action="../public_html/createReservation.php" method="post">
         Pick preferred date, duration and/or location(s) to start reserving a car!<br>
         <label for="pickupDate">Pickup Date</label>
-            <input type="date" name="pickupDate">
+            <input type="date" name="resDate">
         <label for="rentDuration">For how many days?</label>
             <input type="number" name="rentDuration" min="1">
         <label for="lot">Location(s)</label>
