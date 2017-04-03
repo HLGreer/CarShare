@@ -16,8 +16,8 @@ if (isset($_POST['resDate'])) {
     try {
         $db = getDB();
         //$hash_password= hash('sha256', $dbpass); //Password encryption
-        $query = $db->prepare("SELECT DISTINCT * FROM car LEFT OUTER JOIN (SELECT * FROM reservation WHERE ((pickUpDate > :resDate AND dropOffDate > :resDate) OR (pickUpDate < :resDate AND dropOffDate < :resDate))) tempTable ON car.VIN = tempTable.VIN GROUP BY car.VIN;");
-        $query->bindParam("resDate", $_POST['resDate'], PDO::PARAM_STR);
+        $query = $db->prepare("SELECT * FROM car WHERE VIN NOT IN (SELECT VIN FROM reservation WHERE ((pickUpDate <= '2018-05-05' AND dropOffDate >= '2018-05-05') OR (pickUpDate = '2018-05-05') OR (dropOffDate = '2018-05-05')));");
+        //$query->bindParam("resDate", $_POST['resDate'], PDO::PARAM_STR);
        // $query->bindParam("password", $_POST['password'], PDO::PARAM_STR);
         $query->execute();
         echo "hello" . "<br>";
@@ -30,8 +30,8 @@ if (isset($_POST['resDate'])) {
             //print_r($data);
             $carsAvailable = array();
             foreach($data as $output) {
-                //$carsAvailable[$output->VIN] = []
-                #$car
+                echo $output->VIN . "<br>";
+                //$car
             }
         } else {
             echo "Well here we are";
