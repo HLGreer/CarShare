@@ -1,10 +1,9 @@
 <?php
 require("../includes/config.php");
-
+require("../templates/header.php");
 $tbl_name = "rentalcomments";
 
 try {
-    echo "<h1>HELLO!!!</h1>";
     $db = getDB();
 
     //Find VIN based using reservationNUM and reservation
@@ -12,7 +11,6 @@ try {
     $query->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $query->execute();
     $count = $query->rowCount();
-    echo $count;
     $data = $query->fetchAll(PDO::FETCH_OBJ);
     $db = null;
     if ($count) {// there should only be one matching entry
@@ -35,13 +33,11 @@ try {
 
     //session holds memberID
     $insert->bindParam(":memberID", $_SESSION['memberID'], PDO::PARAM_INT);
-    echo "your memberID is", $_SESSION['memberID'], "<br>";
     $insert->bindParam(":VIN", $VIN, PDO::PARAM_INT);
-    echo "your VIN number is", $VIN;
     $result = $insert->execute();
 
     if ($result) {
-        echo "<h1>Comment has been submitted!</h1>";
+        echo "<h1>Thank you! your comment has been submitted.</h1>";
     }
 } catch (PDOException $e){
     echo '{"error":{"text":' . $e->getMessage() . '}}';
