@@ -4,11 +4,10 @@
  */
 
 // used to connect to the database
-function getDB()
-{
+function getDB() {
     $dbhost='localhost';
     $dbuser='root';
-    $dbpass='';
+    $dbpass='mysql';
     $dbname='KTownCars';
 
     try {

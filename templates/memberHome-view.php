@@ -11,4 +11,4 @@
     <h4>We should have options to reserve a car, make a comment, view reservations and other stuff here!</h4>
 </div>
 
-
+<a href="createReservation.php">Create a Reservation!</a>
