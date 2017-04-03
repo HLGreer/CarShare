@@ -4,7 +4,9 @@ require("../includes/config.php");
  *
  */
 
-//if (isset($_POST['location']) & isset($_POST['resDate'])) {
+if ((isset($_POST['resDate']) & (isset($_POST['lot'])))) {
+    echo $_POST['lot'] . "<br><br>";
+}
 if (isset($_POST['resDate'])) {
     echo $_POST['resDate'];
     // If the page has the location and the date requested to make
