@@ -28,17 +28,23 @@
             <?php if (isset($_SESSION['user_type']) &&  $_SESSION['user_type']== "member"){
                 echo '<ul class="nav navbar-nav">
                         <li><a href="../public_html/memberRental-history.php">Rental History</a></li>
-                    </ul>';}
-                if (isset($_SESSION['memberID'])) {
-                    echo '<ul class="nav navbar-nav navbar-right">
-                        <li><a href="../public_html/logout.php">Logout</a></li>
-                    </ul>';}
-                else {
-                    echo '<ul class="nav navbar-nav navbar-right">
-                        <li><a href="../public_html/login.php">Login</a></li>
-                        <li><a href="../public_html/signup.php">Sign Up</a></li>
                     </ul>';
-
+            }
+            elseif (isset($_SESSION['user_type']) &&  $_SESSION['user_type']== "admin"){
+                echo '<ul class="nav navbar-nav">
+                        <li><a href="../public_html/add-car.php">Add a Car to the DataBase</a></li>
+                    </ul>';
+            }
+            if (isset($_SESSION['memberID']) || (isset($_SESSION['adminID']))) {
+                echo '<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../public_html/logout.php">Logout</a></li>
+                </ul>';
+            }
+            else {
+                echo '<ul class="nav navbar-nav navbar-right">
+                    <li><a href="../public_html/login.php">Login</a></li>
+                    <li><a href="../public_html/signup.php">Sign Up</a></li>
+                </ul>';
             }?>
         </div>
     </div>
