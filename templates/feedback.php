@@ -1,6 +1,6 @@
 <?php
 ?>
-<form>
+<form action="../public_html/feedback-verify.php" method="post">
     <label for="reservationNUM">Reservation number:
         <input type="number" name="reservationNUM" required><br>
     <label for="rating">Rating (5 being highest):</label>
