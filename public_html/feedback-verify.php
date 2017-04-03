@@ -20,7 +20,7 @@ try {
         echo "Uh oh... invalid reservation number";
         echo "redirect~~~";
     }
-
+    echo "made it past query";
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, NULL) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $insert->bindParam(":rating", $_POST['rating'], PDO::PARAM_INT);
@@ -28,8 +28,9 @@ try {
 
     //session holds memberID
     $insert->bindParam(":memberID", $_SESSION['memberID'], PDO::PARAM_INT);
-
+    echo "your memberID is", $_SESSION['memberID'], "<br>";
     $insert->bindParam(":VIN", $VIN, PDO::PARAM_INT);
+    echo "your VIN number is", $VIN;
     $result = $insert->execute();
 
     if ($result) {
