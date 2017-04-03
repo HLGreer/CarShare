@@ -20,6 +20,7 @@ try {
         echo "Uh oh... invalid reservation number";
         echo "redirect~~~";
     }
+    $db = getDB();
     echo "made it past query";
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, NULL) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
