@@ -18,6 +18,7 @@ if ((isset($_POST['email'])) & (isset($_POST['password']))) {
         $db = null;
         if ($count == 1) {// there should only be one matching entry
             //echo "Hello";
+            $_SESSION['user_type'] = "member"; //define if member or admin
             $_SESSION['memberID'] = $data->memberID; // Storing user session value
             //echo $_SESSION['memberID'];
             header('Location: memberHome.php');
