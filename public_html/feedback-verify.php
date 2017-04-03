@@ -11,8 +11,19 @@ try {
     $query = $db->prepare("SELECT VIN from reservation WHERE reservationNUM=:reservationNUM;");
     $query->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $query->execute();
-    $data = $query->fetchAll(PDO::FETCH_NUM);
     $count = $query->rowCount();
+    echo $count;
+    $data = $query->fetchAll(PDO::FETCH_OBJ);
+    $db = null;
+    if ($count) {// there should only be one matching entry
+        $carsAvailable = array();
+        foreach($data as $output) {
+            $VIN =  $output->VIN;
+        }
+    } else {
+        echo "Well here we are";
+        //header('Location: login.php'); // TODO: We should add an error message if redirect to login.php
+    }
 
     //$db = null;
     $db = getDB();
