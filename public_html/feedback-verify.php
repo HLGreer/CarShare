@@ -13,11 +13,11 @@ try {
     $query->execute();
     $data = $query->fetchAll(PDO::FETCH_NUM);
     $count = $query->rowCount();
-    
+
     //$db = null;
     $db = getDB();
     echo "made it past query";
-    $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, commentReply) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating, NULL);");
+    $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, commentReply) VALUES (:reservationNUM, :memberID, :VIN, :commentText, :rating, NULL);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $insert->bindParam(":rating", $_POST['rating'], PDO::PARAM_INT);
     $insert->bindParam(":commentText", $_POST['commentText'], PDO::PARAM_STR);
