@@ -18,7 +18,7 @@ try {
         $VIN = $data;
     } else {
         echo "Uh oh... invalid reservation number";
-        echo "*redirects you -SOMEWHERE-*";
+        echo "redirect~~~";
     }
 
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, NULL) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating);");
