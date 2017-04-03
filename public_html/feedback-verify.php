@@ -4,6 +4,7 @@ require("../includes/config.php");
 $tbl_name = "rentalcomments";
 
 try {
+    echo "<h1>HELLO!!!</h1>";
     $db = getDB();
 
     //Find VIN based using reservationNUM and reservation
