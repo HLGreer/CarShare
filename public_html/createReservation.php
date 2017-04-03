@@ -16,7 +16,7 @@ if (isset($_POST['pickupDate'])) {
     try {
         $db = getDB();
         //$hash_password= hash('sha256', $dbpass); //Password encryption
-        $query = $db->prepare("SELECT * FROM car LEFT OUTER JOIN (SELECT * FROM reservation WHERE ((pickUpDate > '2017-04-02' AND dropOffDate > '2017-04-02') OR (pickUpDate < '2017-04-02' AND dropOffDate < '2017-04-02'))) tempTable ON car.VIN = tempTable.VIN;");
+        $query = $db->prepare("SELECT DISTINCT * FROM car LEFT OUTER JOIN (SELECT * FROM reservation WHERE ((pickUpDate > '2017-04-02' AND dropOffDate > '2017-04-02') OR (pickUpDate < '2017-04-02' AND dropOffDate < '2017-04-02'))) tempTable ON car.VIN = tempTable.VIN GROUP BY car.VIN;");
         //$query->bindParam("email", $_POST['email'], PDO::PARAM_STR);
        // $query->bindParam("password", $_POST['password'], PDO::PARAM_STR);
         $query->execute();
@@ -27,11 +27,11 @@ if (isset($_POST['pickupDate'])) {
         $db = null;
         if ($count) {// there should only be one matching entry
             //display array elements
-
-            print_r($data);
+            //print_r($data);
+            $carsAvailable = array();
             foreach($data as $output) {
-                echo "cat";
-                echo $output->VIN . "<br>";
+                //$carsAvailable[$output->VIN] = []
+                #$car
             }
         } else {
             echo "Well here we are";
