@@ -11,16 +11,10 @@ try {
     $query = $db->prepare("SELECT VIN from reservation WHERE reservationNUM=:reservationNUM;");
     $query->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $query->execute();
-    $data = $query->fetchAll(PDO::FETCH_OBJ);
+    $data = $query->fetchAll(PDO::FETCH_NUM);
     $count = $query->rowCount();
-    //echo $count;
-    $db = null;
-    if ($count == 1) {// there should only be one matching entry
-        $VIN = $data[0];
-    } else {
-        echo "Uh oh... invalid reservation number";
-        echo "redirect~~~";
-    }
+    
+    //$db = null;
     $db = getDB();
     echo "made it past query";
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, commentReply) VALUES (:reservationNUM, :, :memberID, :VIN, :commentText, :rating, NULL);");
