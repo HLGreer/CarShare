@@ -13,16 +13,7 @@ try {
     $query->bindParam(":rentalFee", $_POST['rentalFee'], PDO::PARAM_INT);
     $query->bindParam(":parkID", $_POST['parkID'], PDO::PARAM_INT);
     $result = $query->execute();
-    /*
-    $query->execute(array(
-        "vin" => $_POST['vin'],
-        "make" => $_POST['make'],
-        "model" => $_POST['model'],
-        "year" => $_POST['year'],
-        "rentalFee" => $_POST['rentalFee'],
-        "parkID" => $_POST['parkID'])
-    );*/
-    //dont know what happens here ****
+
     if ($result) {
         echo "<h1>Car has been added!</h1>";
     }
