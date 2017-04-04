@@ -14,7 +14,6 @@ try {
     $data = $query->fetchAll(PDO::FETCH_OBJ);
     $db = null;
     if ($count) {// there should only be one matching entry
-        $carsAvailable = array();
         foreach($data as $output) {
             $VIN =  $output->VIN;
         }
