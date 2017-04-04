@@ -34,10 +34,11 @@
             elseif (isset($_SESSION['user_type']) &&  $_SESSION['user_type']== "admin"){
                 echo '<ul class="nav navbar-nav">
                         <li><a href="../public_html/add-car.php">Add Car to DataBase</a></li>
-                        <li><a href="../public_html/invoice.php">Create Invoice</a></li>
                         <li><a href="../public_html/add-car.php">Add Car to Fleet</a></li>
+                        <li><a href="../public_html/invoice.php">Create Invoice</a></li>
                         <li><a href="../public_html/reply.php">Reply to Feedback</a></li>
-                        <li><a href="../templates/adminReservations.php">Find Reservations</a></li>
+                        <li><a href="../public_html/carRentalHistory.php">View Car Rental History</a></li>
+                        <li><a href="../templates/adminReservations.php">View Reservations</a></li>
                     </ul>';
             }
             if (isset($_SESSION['memberID']) || (isset($_SESSION['adminID']))) {

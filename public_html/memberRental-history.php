@@ -2,7 +2,7 @@
 
 require("../includes/config.php");
 $memID= $_SESSION['memberID'];
-$values["title"] = "Rental History";
+$values["title"] = "Member Rental History";
 render("../templates/memberRental-history.php", $values, __FILE__);
 try {
     $conn = getDB();
