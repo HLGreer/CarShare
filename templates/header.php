@@ -34,6 +34,7 @@
                 echo '<ul class="nav navbar-nav">
                         <li><a href="../public_html/memberRental-history.php">Rental History</a></li>
                         <li><a href="../public_html/feedback.php">Feedback</a></li>
+                        <li><a href="../public_html/createReservation.php">Create a Reservation</a></li>
                         <li><a href="../public_html/pickup-dropoff.php">Pick up/Drop off Car</a></li>
                     </ul>';
             }
