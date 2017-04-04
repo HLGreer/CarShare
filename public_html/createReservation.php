@@ -5,7 +5,52 @@ require("../includes/config.php");
  */
 
 if ((isset($_POST['resDate']) & (isset($_POST['lot'])))) {
-    echo $_POST['lot'] . "<br><br>";
+
+
+    try {
+        $db = getDB();
+        //$hash_password= hash('sha256', $dbpass); //Password encryption
+        $query = $db->prepare("SELECT tempTable.* FROM (SELECT * FROM car WHERE VIN NOT IN (SELECT VIN FROM reservation WHERE ((pickUpDate <= '2017-08-09' AND dropOffDate >= '2017-08-09') OR (pickUpDate = '2017-08-09') OR (dropOffDate = '2017-08-09')) ) ) tempTable WHERE parkID=1;");
+        $query->bindParam("resDate", $_POST['resDate'], PDO::PARAM_STR);
+        $query->bindParam("lot", $_POST['lot'], PDO::PARAM_STR);
+        $query->execute();
+        //echo "hello" . "<br>";
+        $count = $query->rowCount();
+        //echo $count;
+        global $data;
+        $data = $query->fetchAll(PDO::FETCH_OBJ);
+        $db = null;
+        if ($count) {// there should only be one matching entry
+            //display array elements
+            //print_r($data);
+
+            $carsAvailable = array();
+
+            $values['title'] = "Choose A Car";
+            $values['data'] = $data;
+            $values['resDate'] = $_POST['resDate'];
+            render("../templates/chooseACar-view.php", $values, __FILE__);
+
+            /*
+            foreach($data as $output) {
+                genCarTableEntry($output->make, $output->model, $output->year, $output->rentalFee);
+            }
+            */
+
+        } else {
+            // no cars available on that day!!!
+            echo "Well here we are";
+            //header('Location: login.php'); // TODO: We should add an error message if redirect to login.php
+        }
+    } catch (PDOException $e) {
+        echo '{"error":{"text":' . $e->getMessage() . '}}';
+    }
+
+
+
+
+
+
 } elseif (isset($_POST['resDate'])) {
     //echo $_POST['resDate'];
     // If the page has the location and the date requested to make

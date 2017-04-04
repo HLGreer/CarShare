@@ -1,21 +1,13 @@
 <?php
-
-function genCarTableEntry($make, $model, $year, $fee, $vin) {
-    echo "<tr>";
-    echo "<td>" . $make . "</td>";
-    echo "<td>" . $model . "</td>";
-    echo "<td>" . $year . "</td>";
-    echo "<td>" . "$" . $fee . ".00" . "</td>";
-    echo "<td><input type='radio' name='carSelect' value='$vin'/></td>";
-    echo "</tr>";
-}
+/**
+ * Choose a Car with both the location and the reservation to set
+ */
 
 ?>
 
 <form action="../public_html/reservation-verify.php" method="post">
 <div class="container">
     <h2>Make A Reservation</h2>
-    <p>For <?php date("D, d M Y", strtotime($_POST['']));?></p>
     <p>Select A Vehicle:</p>
     <table class="table table-striped">
         <thead>
@@ -35,8 +27,8 @@ function genCarTableEntry($make, $model, $year, $fee, $vin) {
             genCarTableEntry($output->make, $output->model, $output->year, $output->rentalFee, $output->VIN);
         }
         ?>
-        </tbody>
-    </table>
-    <button type="submit">Reserve</button>
+</tbody>
+</table>
+<button type="submit">Reserve</button>
 </div>
 </form>
