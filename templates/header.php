@@ -40,7 +40,7 @@
                         <li><a href="../public_html/reply.php">Reply to Feedback</a></li>
                         <li><a href="../public_html/adminLocationAvail.php">View Available Cars in Location</a></li>
                         <li><a href="../public_html/carRentalHistory.php">View Car Rental History</a></li>
-                        <li><a href="../templates/adminReservations.php">View Reservations</a></li>
+                        <li><a href="adminReservations-view.php">View Reservations</a></li>
                     </ul>';
             }
             if (isset($_SESSION['memberID']) || (isset($_SESSION['adminID']))) {
