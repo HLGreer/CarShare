@@ -9,6 +9,7 @@
         <div class="form-group">
             <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1" name="lot">
+                <option disabled selected value> -- select an option -- </option>
                 <option value="1">Lot 1</option>
                 <option value="2">Lot 2</option>
                 <option value="3">Lot 3</option>

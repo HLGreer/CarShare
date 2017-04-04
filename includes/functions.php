@@ -41,6 +41,7 @@ function render($template, $values, $filename) {
         }
     }
 }
+
 function buildTable($columns, $result_set)
 {
     //Create an empty table
