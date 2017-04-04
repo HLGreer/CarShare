@@ -7,13 +7,13 @@ try {
     //kms
     $conn = getDB();
     //unique VIN row for most recent odometer reading
-    $stmt = $conn->prepare("SELECT rentalhistory.VIN, dropOffOdometer, odometerReading FROM rentalhistory, reservation, carmaintenance WHERE rentalhistory.VIN=reservation.VIN AND reservation.VIN=carmaintenance.VIN AND (dropOffOdometer-odometerReading >5000) AND (maintenanceType = 'scheduled');");
+    $stmt = $conn->prepare("SELECT rentalhistory.VIN, dropOffOdometer, odometerReading FROM rentalhistory, reservation, carmaintenance WHERE rentalhistory.VIN=reservation.VIN AND reservation.VIN=carmaintenance.VIN AND (dropOffOdometer-odometerReading >5000);");
     $stmt->execute();
     $count = $stmt->rowCount();
-    echo $count;
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array("VIN", "Drop off odometer reading", "Odometer reading at last maintenance");
     buildTable($header,$result);
+    echo "</table>";
     $conn = null;
 
 
@@ -23,7 +23,7 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array('VIN', 'Status');
-    echo "<h3>Cars in need of Repairs:</h3>";
+    echo "<br><h3>Cars in need of Repairs:</h3>";
     buildTable($header,$result);
     $conn=null;
 
