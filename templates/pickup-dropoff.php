@@ -1,10 +1,11 @@
 
-<h1>Pick up / Drop off</h1>
+
 
 <!--
 Should only show form if member has made a reservation!
 -->
-<div id="signup-form">
+<div class="container" id="signup-form">
+    <h1>Pick up / Drop off</h1>
     <form action="../public_html/pickup-dropoff-verify.php" method="post">
         <div class="form-group">
             <label for="ReservationNumber">Reservation Number</label>
