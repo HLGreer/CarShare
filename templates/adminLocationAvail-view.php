@@ -1,31 +1,33 @@
 <?php
+/**
+ * View for the admin when checking what cars are available on a particular day.
+ */
 
-function genCarTableEntry($make, $model, $year, $fee, $vin) {
+function genAvailCarTableEntry($make, $model, $year, $fee, $vin, $parkID) {
     echo "<tr>";
+    echo "<td>" . $vin . "</td>";
+    echo "<td>" . $parkID . "</td>";
     echo "<td>" . $make . "</td>";
     echo "<td>" . $model . "</td>";
     echo "<td>" . $year . "</td>";
     echo "<td>" . "$" . $fee . ".00" . "</td>";
-    echo "<td><input type='radio' name='carSelect' value=$vin /></td>";
     echo "</tr>";
 }
-echo $resDate;
+
 ?>
 
-<form action="../public_html/reservation-verify.php" method="post">
 <div class="container">
-    <h2>Make A Reservation</h2>
-    <p>For <?php $date=date_create($resDate);
-        echo date_format($date,"Y/m/d");?></p>
-    <p>Select A Vehicle:</p>
+    <h2>Cars Available</h2>
+    <p>These cars are available to rent today: </p>
     <table class="table table-striped">
         <thead>
         <tr>
+            <th>Vehicle ID</th>
+            <th>Parking Lot ID</th>
             <th>Make</th>
             <th>Model</th>
             <th>Year</th>
             <th>Rental Fee</th>
-            <th>Select</th>
         </tr>
         </thead>
         <tbody>
@@ -33,12 +35,8 @@ echo $resDate;
         //genCarTableEntry("Nissan", "Altima", "2016", "$65" );
         //print_r($data);
         foreach($data as $output) {
-            genCarTableEntry($output->make, $output->model, $output->year, $output->rentalFee, $output->VIN);
+            genAvailCarTableEntry($output->make, $output->model, $output->year, $output->rentalFee, $output->VIN, $output->parkID);
         }
         ?>
         </tbody>
-    </table>
-    <input type="hidden" value="<?php $resDate ?>" name="resDate"" />
-    <button type="submit">Reserve</button>
 </div>
-</form>

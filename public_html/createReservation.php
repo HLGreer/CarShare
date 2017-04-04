@@ -6,11 +6,11 @@ require("../includes/config.php");
 
 if ((isset($_POST['resDate']) & (isset($_POST['lot'])))) {
 
-
+echo print_r($_POST['resDate']);
     try {
         $db = getDB();
         //$hash_password= hash('sha256', $dbpass); //Password encryption
-        $query = $db->prepare("SELECT tempTable.* FROM (SELECT * FROM car WHERE VIN NOT IN (SELECT VIN FROM reservation WHERE ((pickUpDate <= '2017-08-09' AND dropOffDate >= '2017-08-09') OR (pickUpDate = '2017-08-09') OR (dropOffDate = '2017-08-09')) ) ) tempTable WHERE parkID=1;");
+        $query = $db->prepare("SELECT tempTable.* FROM (SELECT * FROM car WHERE VIN NOT IN (SELECT VIN FROM reservation WHERE ((pickUpDate <= '2017-08-09' AND dropOffDate >= '2017-08-09') OR (pickUpDate = '2017-08-09') OR (dropOffDate = '2017-08-09')) ) ) tempTable WHERE parkID=:lot;");
         $query->bindParam("resDate", $_POST['resDate'], PDO::PARAM_STR);
         $query->bindParam("lot", $_POST['lot'], PDO::PARAM_STR);
         $query->execute();
@@ -81,6 +81,7 @@ if ((isset($_POST['resDate']) & (isset($_POST['lot'])))) {
 
             $values['title'] = "Choose A Car";
             $values['data'] = $data;
+            $values['resDate'] = $_POST['resDate'];
             render("../templates/chooseACar-view.php", $values, __FILE__);
 
             /*
