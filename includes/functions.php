@@ -60,7 +60,7 @@ function buildTable($columns, $result_set)
 {
     //Create an empty table
     $table = '';
-    $table .= '<table border="1" class="table table-striped">';
+    $table .= '<div class="container"><table border="1" class="table table-striped">';
 
     //Build the column structure, passed in from the $columns array
     $table .= "<tr>";

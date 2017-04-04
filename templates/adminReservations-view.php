@@ -3,7 +3,7 @@
 <h3>Find which cars have been rented on a given day!</h3>
 <form action="../public_html/adminReservations-verify.php" method="post">
     <label for="d">Choose a date:</label>
-        <input type="date" name="d">
-        <input type="submit" value="Submit">
+        <input class="form-control" type="date" name="d">
 </form>
+    <button type="submit" class="btn btn-default">Submit</button>
 </div>
