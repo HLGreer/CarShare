@@ -18,7 +18,11 @@
     background-image: url('../../locations.png');
     background-size: cover;
     height: 75vh;
-    color: white;
+    color: blueviolet;
     margin-bottom: 0;
+}
+
+#maptext {
+
 }
 
