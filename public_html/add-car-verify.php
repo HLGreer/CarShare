@@ -15,7 +15,8 @@ try {
     $result = $query->execute();
 
     if ($result) {
-        echo "<h1>Car has been added!</h1>";
+        $values["title"] = "CarAdd";
+        render("../templates/addCarConfirm.php", $values, __FILE__);;
     }
 } catch (PDOException $e){
     echo '{"error":{"text":' . $e->getMessage() . '}}';

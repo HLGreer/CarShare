@@ -1,5 +1,3 @@
-<?php
-?>
 <div class="container" id="signup-form">
     <form action="../public_html/feedback-verify.php" method="post">
         <div class="form-group">
