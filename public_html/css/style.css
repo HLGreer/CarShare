@@ -10,4 +10,11 @@
     margin-bottom: 0;
 }
 
+#secondJum {
+    background-image: url('../../locations.png');
+    background-size: cover;
+    height: 75vh;
+    color: white;
+    margin-bottom: 0;
+}
 
