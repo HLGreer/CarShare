@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h1>
         Create Invoice for a given member
     </h1>

@@ -1,4 +1,4 @@
-
+<div class="container">
 <h1>Add Car to Fleet</h1>
 
 <!--
@@ -35,3 +35,4 @@ Admin only
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
 </form>
+</div>

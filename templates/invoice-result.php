@@ -9,6 +9,7 @@
 //$invoice = Stripe_Invoice::retrieve($invoiceID);
 //?>
 <!DOCTYPE html>
+<div class="container">
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -143,3 +144,4 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
+</div>

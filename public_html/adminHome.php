@@ -9,11 +9,30 @@ try {
     //kms
     $conn = getDB();
     //unique VIN row for most recent odometer reading
-    $stmt = $conn->prepare("SELECT *
-FROM( SELECT VIN, make, model, year, COUNT(reservationNum) as numRentals 
-FROM rentalhistory NATURAL RIGHT OUTER JOIN car 
-GROUP BY VIN ) temp1
-HAVING MIN(numRentals) OR MAX(numRentals);");
+    $stmt = $conn->prepare("(SELECT *
+FROM( 
+    SELECT VIN, make, model, year, COUNT(reservationNum) as numRentals 
+	FROM rentalhistory NATURAL RIGHT OUTER JOIN car 
+	GROUP BY VIN 
+) temp1
+HAVING  numRentals = (
+    	SELECT MIN(numRentals)
+		FROM( 
+            SELECT COUNT(reservationNum) as numRentals 
+			FROM rentalhistory NATURAL RIGHT OUTER JOIN car 
+			GROUP BY VIN 
+        ) temp2
+    )
+ )
+ UNION
+ (SELECT *
+FROM( 
+    SELECT VIN, make, model, year, COUNT(reservationNum) as numRentals 
+	FROM rentalhistory NATURAL RIGHT OUTER JOIN car 
+	GROUP BY VIN 
+) temp1
+HAVING  MAX(numRentals) 
+ );");
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array("VIN", "Make","Model","Year","Number of Reservations");
