@@ -36,9 +36,9 @@ try {
     $result = $insert->execute();
 
     if ($result) {
-        echo "<div class='container'><h1>Thank you! your comment has been submitted.</h1></div>";
+        echo "<div class='container'><h3>Thank you! Your comment has been submitted.</h3></div>";
     }
 } catch (PDOException $e){
-    echo '{"error":{"text":' . $e->getMessage() . '}}';
+    echo 'Please only provide 1 comment per Rental.';
 }
 ?>

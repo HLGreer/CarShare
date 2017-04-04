@@ -9,4 +9,5 @@
 
 <div class="container">
     <p>Reservation Successful!</p>
+    <p>Check your email for your Reservation Number!</p>
 </div>
