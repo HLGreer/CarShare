@@ -37,9 +37,9 @@
                         <li><a href="../public_html/add-car.php">Add Car to Fleet</a></li>
                         <li><a href="../public_html/invoice.php">Create Invoice</a></li>
                         <li><a href="../public_html/reply.php">Reply to Feedback</a></li>
-                        <li><a href="../public_html/adminLocationAvail.php">View Available Cars in Location</a></li>
+                        <li><a href="../public_html/adminLocationAvail.php">View Available Cars Today</a></li>
                         <li><a href="../public_html/carRentalHistory.php">View Car Rental History</a></li>
-                        <li><a href="adminReservations-view.php">View Reservations</a></li>
+                        <li><a href="../public_html/adminReservations.php">View Reservations</a></li>
                     </ul>';
             }
             if (isset($_SESSION['memberID']) || (isset($_SESSION['adminID']))) {
