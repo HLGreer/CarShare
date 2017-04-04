@@ -20,5 +20,5 @@ catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
-echo "</table>";
+echo "</table></div>";
 ?>

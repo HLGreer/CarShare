@@ -13,7 +13,7 @@ try {
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array("VIN", "Drop off odometer reading", "Odometer reading at last maintenance");
     buildTable($header,$result);
-    echo "</table>";
+    echo "</table></div>";
     $conn = null;
 
 
@@ -31,4 +31,4 @@ try {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;
-echo "</table>";
+echo "</table></div>";

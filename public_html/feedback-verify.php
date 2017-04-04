@@ -36,7 +36,7 @@ try {
     $result = $insert->execute();
 
     if ($result) {
-        echo "<h1>Thank you! your comment has been submitted.</h1>";
+        echo "<div class='container'><h1>Thank you! your comment has been submitted.</h1></div>";
     }
 } catch (PDOException $e){
     echo '{"error":{"text":' . $e->getMessage() . '}}';

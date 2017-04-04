@@ -27,7 +27,7 @@ if ($_POST['pord']=="pickup") {
     $insert->bindParam(":pickUpOdometer", $_POST['odometer'], PDO::PARAM_INT);
     $insert->bindParam(":VIN", $VIN, PDO::PARAM_INT);
     if ($insert->execute()) {
-        echo "<h3>Successfully picked up car. Enjoy!</h3>";
+        echo "<div class='container'><h3>Successfully picked up car. Enjoy!</h3></div>";
     } else {
         echo "Welp...";
     }
