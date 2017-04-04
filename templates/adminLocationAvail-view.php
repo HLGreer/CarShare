@@ -13,12 +13,13 @@ function genAvailCarTableEntry($make, $model, $year, $fee, $vin, $parkID) {
     echo "<td>" . "$" . $fee . ".00" . "</td>";
     echo "</tr>";
 }
+$mydate=getdate(date("U"));
 
 ?>
 
 <div class="container">
     <h2>Cars Available</h2>
-    <p>These cars are available to rent today: </p>
+    <p>These cars are available to rent today, <?php echo "$mydate[weekday], $mydate[month] $mydate[mday], $mydate[year]"; ?> </p>
     <table class="table table-striped">
         <thead>
         <tr>

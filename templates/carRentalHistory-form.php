@@ -1,6 +1,6 @@
 <div>
     <h1>
-        Create Invoice for a given member
+        Car Rental History
     </h1>
 
     <form action="../public_html/carRentalHistory-verify.php" method="post">
