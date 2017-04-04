@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<div id="signup-form">
+<div class="container" id="signup-form">
     <form action="../public_html/adminLogin-verify.php" method="post">
         <div class="form-group">
             <label for="ID">adminID</label>

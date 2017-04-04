@@ -5,7 +5,7 @@ require("../includes/config.php");
 
 $tbl_name = "admin";
 if ((isset($_POST['adminID'])) & (isset($_POST['password']))) {
-
+    echo "here";
     try {
         $db = getDB();
         //$hash_password= hash('sha256', $dbpass); //Password encryption
@@ -23,7 +23,7 @@ if ((isset($_POST['adminID'])) & (isset($_POST['password']))) {
             //echo $_SESSION['memberID'];
             header('Location: adminHome.php');
         } else {
-            header('Location: adminLogin.php'); // TODO: We should add an error message if redirect to login.php
+            header('Location: adminLogin.php');
         }
     } catch (PDOException $e) {
         echo '{"error":{"text":' . $e->getMessage() . '}}';

@@ -17,7 +17,9 @@ HAVING MIN(numRentals) OR MAX(numRentals);");
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array("VIN", "Make","Model","Year","Number of Reservations");
+    echo "<div class='container'>";
     buildTable($header,$result);
+    echo "</div>";
     echo "</table>";
     $conn = null;
 } catch(PDOException $e) {

@@ -9,14 +9,15 @@ function genCarTableEntry($make, $model, $year, $fee, $vin) {
     echo "<td><input type='radio' name='carSelect' value=$vin; /></td>";
     echo "</tr>";
 }
-echo "Cat" .  $resDate;
+
 ?>
 
 <form id="myForm" action="../public_html/reservation-verify.php" method="post">
 <div class="container">
     <h2>Make A Reservation</h2>
     <p>For <?php $date=date_create($resDate);
-        echo date_format($date,"Y/m/d");?></p>
+        echo date_format($date,"Y/m/d"); ?><br>
+    </p>
     <p>Select A Vehicle:</p>
     <table class="table table-striped">
         <thead>
