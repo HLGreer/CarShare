@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h1>
         Car Rental History
     </h1>
