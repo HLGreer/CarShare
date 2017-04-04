@@ -1,8 +1,5 @@
 <?php
 require("../includes/config.php");
-/**
- *
- */
 
 if ((isset($_POST['resDate']) & (isset($_POST['lot'])))) {
 

@@ -1,6 +1,7 @@
 <?php
 require("../includes/config.php");
-require("../templates/header.php");
+$values["title"] = "Feedback";
+render("../templates/feedback-view.php", $values, __FILE__);
 $tbl_name = "rentalcomments";
 
 try {
@@ -24,7 +25,6 @@ try {
 
     //$db = null;
     $db = getDB();
-    echo "made it past query";
     $insert = $db->prepare("INSERT INTO $tbl_name (reservationNUM, memberID, VIN, commentText, rating, commentReply) VALUES (:reservationNUM, :memberID, :VIN, :commentText, :rating, NULL);");
     $insert->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
     $insert->bindParam(":rating", $_POST['rating'], PDO::PARAM_INT);
