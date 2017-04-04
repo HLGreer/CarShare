@@ -43,6 +43,16 @@ function genCarTableEntry($make, $model, $year, $fee, $vin) {
         </tbody>
     </table>
     <input type="hidden" value="<?php echo $resDate ?>" name="resDate"" />
-    <button type="submit">Reserve</button>
+    <?php if (isset($dropdate)) {
+        echo "<input type='hidden' value=$dropdate name='dropDate'/>";
+    }
+    if (isset($rentDuration)) {
+        echo "<input type='hidden' value=$rentDuration name='rentDuration'/>";
+    }
+    if (isset($dropdate)) {
+        echo "<input type='hidden' value=$dropdate name='dropdate'/>";
+    }
+    ?>
+<button type="submit">Reserve</button>
 </div>
 </form>
