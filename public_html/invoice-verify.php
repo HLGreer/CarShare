@@ -23,13 +23,6 @@ try {
     $resultsRent = $rentalStmt->fetchAll();
     $values['fees'] = $resultsRent;
 
-//    foreach ($raw as $key=>$reservation) {
-//        $sum = $reservation['rentalFee'] * $reservation['daysReserved'];
-//        array_push($values[$key],$sum);
-//        $values["fees"]["Reservation #: ".$reservation['reservationNum']] = $sum;
-//    }
-
-
     $memberStmt = $conn->prepare("SELECT membershipFee,firstName,lastName from member WHERE memberID= ".$values["memberID"]);
     $memberStmt->execute();
 
