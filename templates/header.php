@@ -22,7 +22,12 @@
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="../public_html/">KTCS CarShare</a>
+            <?php if (isset($_SESSION['user_type']) &&  $_SESSION['user_type']== "admin"){
+                echo'<a class="navbar-brand" href="../public_html/adminHome.php">KTCS Admin</a>';
+            }else {
+                echo'<a class="navbar-brand" href = "../public_html/" > KTCS CarShare </a >';
+            }
+            ?>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <?php if (isset($_SESSION['user_type']) &&  $_SESSION['user_type']== "member"){
