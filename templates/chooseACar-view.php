@@ -16,7 +16,10 @@ function genCarTableEntry($make, $model, $year, $fee, $vin) {
 <div class="container">
     <h2>Make A Reservation</h2>
     <p>For <?php $date=date_create($resDate);
-        echo date_format($date,"Y/m/d"); ?><br>
+        echo date_format($date,"Y/m/d");
+        if (isset($dropdate)) {
+            echo " - " . $dropdate;
+        } ?><br>
     </p>
     <p>Select A Vehicle:</p>
     <table class="table table-striped">
