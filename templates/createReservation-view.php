@@ -13,14 +13,9 @@
                 <option value="1">Lot 1</option>
                 <option value="2">Lot 2</option>
                 <option value="3">Lot 3</option>
-                <option value="4">Lot 4</option>
             </select>
         </div>
         <input type="reset" value="Reset">
         <input type="submit" value="Apply">
     </form>
 </div>
-
-
-This currently only works for the pick up Date.
-Need to only select one lot at a time (this gets too difficult otherwise.)

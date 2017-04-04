@@ -1,14 +1,27 @@
 <?php
 // Properly renders pages with header and footer
-function render($template, $values, $filename) {
-    $exempt_urls = ["login.php", "index.php", "signup.php", "new_member.php", "login-verify.php", "functions.php", "logout.php"];
+function render($template, $values, $filename)
+{
+    $exempt_urls_member = ["login.php", "index.php", "signup.php", "new_member.php", "login-verify.php", "functions.php", "logout.php", "adminLogin.php"];
     // Catch if the user is trying to access a page they need to be logged in for
-    if (!isset($_SESSION['memberID']) && !in_array(basename($filename), $exempt_urls)) {
+    if (isset($_SESSION['adminID'])) {
+        if (file_exists("../templates/$template")) {
+            if ($values != NULL){
+                extract($values);
+            }
+            require("../templates/header.php");
+
+            require("../templates/$template");
+
+            require("../templates/footer.php");
+        }
+    }
+    elseif (!isset($_SESSION['memberID']) && !in_array(basename($filename), $exempt_urls_member)) {
         //echo "here";
         $values['title'] = "Login";
         $values['message'] = "Sorry, you have to login to view that page.";
         if (file_exists("../templates/$template")) {
-            if ($values != NULL){
+            if ($values != NULL) {
                 extract($values);
             }
             header('Location: login.php');
@@ -21,6 +34,7 @@ function render($template, $values, $filename) {
             */
 
         }
+
         else {
             trigger_error("Template does not exist.", E_USER_ERROR);
         }

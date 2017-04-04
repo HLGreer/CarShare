@@ -31,7 +31,7 @@ if (isset($_POST['resDate']) & isset($_POST['carSelect'])) {
         if ($result) {// there should only be one matching entry
             //$values['data'] = $data;
             $values['resDate'] = $_POST['resDate'];
-            render("../templates/reservationSuccessful-view.php", $values, __FILE__);
+            header('location: reservationSuccessful.php');
         } else {
             // no cars available on that day!!!
             echo "Well here we are";
