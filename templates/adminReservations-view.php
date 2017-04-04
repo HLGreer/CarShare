@@ -4,6 +4,7 @@
 <form action="../public_html/adminReservations-verify.php" method="post">
     <label for="d">Choose a date:</label>
         <input class="form-control" type="date" name="d">
-</form>
     <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
 </div>
