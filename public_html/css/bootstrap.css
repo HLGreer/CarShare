@@ -240,6 +240,7 @@ th {
   }
   .navbar {
     display: none;
+    background-color: #1b6d85;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -4168,6 +4169,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   min-height: 50px;
   margin-bottom: 20px;
   border: 1px solid transparent;
+  background-color: #1b6d85;
 }
 @media (min-width: 768px) {
   .navbar {

@@ -24,7 +24,7 @@ $count = $query->rowCount();
 $data = $query->fetchAll(PDO::FETCH_OBJ);
 $db = null;
 if ($count) {
-    echo"<table>
+    echo"<table border='1' class='table table-bordered'>
         <th>VIN</th>
         <th>Rating</th>
         <th>Comment</th>
