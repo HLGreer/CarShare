@@ -8,6 +8,6 @@
 ?>
 <div>
     <h2>This is the ADMIN home.</h2>
-    <h4>We should have options to reserve a car, make a comment, view reservations and other stuff here!</h4>
+    <h4>Options to add a car to your fleet, reply to a comment, view reservations and more here!</h4>
 </div>
 
