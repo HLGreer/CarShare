@@ -1,6 +1,13 @@
-.carTable {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+.table {
+    text-align: center;
 }
+
+#firstJum {
+    background-image: url('../../includes/downtownBlur.jpg');
+    background-size: cover;
+    height: 75vh;
+    color: white;
+    margin-bottom: 0;
+}
+
+
