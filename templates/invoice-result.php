@@ -120,7 +120,7 @@
                 <tr>
                     <td> </td>
                     <td> </td>
-                    <td><form><input type="button" value="Send Invoice"></form></td>
+                    <td><a href="invoice.php" id="invoice-button">Send Invoice</a></td>
                 </tbody>
             </table>
         </div>
