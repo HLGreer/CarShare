@@ -1,12 +1,17 @@
-<div id="signTitle">
-    <h1>Sign Up Now!</h1>
-</div>
+
 
 <!--
 Need to generate a memberID
 -->
 
-<div id="signup-form">
+<div class="container" id="signup-form">
+    <h1>Sign Up Now!</h1>
+    <br>
+    <div class=container id="promotion">
+    <p>Promotion: Membership Fee has been rolled back to $34.00/month!<br>
+    You will not be charged until you use the service for the first time.</p>
+        <br>
+    </div>
     <form action="../public_html/signup-verify.php" method="post">
         <div class="form-group">
             <label for="Firstname">First Name</label>

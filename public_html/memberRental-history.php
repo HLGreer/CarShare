@@ -11,10 +11,12 @@ try {
 
     // set the resulting array to associative
     $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-    buildTable(["Reservation Number","Car Number","PickUp Odometer","DropOff Odometer","Status On Return","Make","Model","Year","Rental Fee","PickUp Date","Number of Days Reserved"],$stmt->fetchAll());
-    }
+    echo "<div class='container'>";
+    buildTable(["Reservation Number", "Car Number", "PickUp Odometer", "DropOff Odometer", "Status On Return", "Make", "Model", "Year", "Rental Fee", "PickUp Date", "Number of Days Reserved"], $stmt->fetchAll());
 
-catch(PDOException $e) {
+    echo "</div>";
+
+} catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 $conn = null;

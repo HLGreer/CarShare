@@ -1,4 +1,4 @@
-<h1>Welcome!</h1>
+<div class="container" id="reservation">
     <h2>Reserve</h2>
     <form action="../public_html/createReservation.php" method="post">
         Pick preferred date, duration and/or location(s) to start reserving a car!<br>
@@ -19,6 +19,8 @@
         <input type="reset" value="Reset">
         <input type="submit" value="Apply">
     </form>
+</div>
+
 
 This currently only works for the pick up Date.
 Need to only select one lot at a time (this gets too difficult otherwise.)

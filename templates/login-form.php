@@ -1,6 +1,7 @@
 <?php
 
 ?>
+<div class="container">
 <div id="signup-form">
     <form action="../public_html/login-verify.php" method="post">
         <div class="form-group">
@@ -15,4 +16,5 @@
     </form>
     <br>
     <p>Don't have an account? <a href="../public_html/signup.php">Create one!</a></p>
+</div>
 </div>
