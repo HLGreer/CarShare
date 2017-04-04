@@ -6,13 +6,13 @@ function genCarTableEntry($make, $model, $year, $fee, $vin) {
     echo "<td>" . $model . "</td>";
     echo "<td>" . $year . "</td>";
     echo "<td>" . "$" . $fee . ".00" . "</td>";
-    echo "<td><input type='radio' name='carSelect' value=$vin /></td>";
+    echo "<td><input type='radio' name='carSelect' value=$vin; /></td>";
     echo "</tr>";
 }
-echo $resDate;
+echo "Cat" .  $resDate;
 ?>
 
-<form action="../public_html/reservation-verify.php" method="post">
+<form id="myForm" action="../public_html/reservation-verify.php" method="post">
 <div class="container">
     <h2>Make A Reservation</h2>
     <p>For <?php $date=date_create($resDate);
@@ -38,7 +38,7 @@ echo $resDate;
         ?>
         </tbody>
     </table>
-    <input type="hidden" value="<?php $resDate ?>" name="resDate"" />
+    <input type="hidden" value="<?php echo $resDate ?>" name="resDate"" />
     <button type="submit">Reserve</button>
 </div>
 </form>
