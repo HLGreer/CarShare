@@ -13,7 +13,7 @@ try {
     $db = null;
     $arr=array('VIN', 'make', 'model', 'memberID');
     if ($count) {
-        echo "<h3>These cars have been rented on ".$_POST['d'].":</h3>";
+        echo "<div class='container'><h3>These cars have been rented on ".$_POST['d'].":</h3></div>";
         buildTable($arr, $data);
     } else {
         echo "uh oh";
