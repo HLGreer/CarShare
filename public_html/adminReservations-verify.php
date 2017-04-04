@@ -1,5 +1,7 @@
 <?php
 require("../includes/config.php");
+$values['title'] = 'Reservation View';
+render("../templates/adminReservationResults-view.php", $values, __FILE__);
 
 try {
     $db = getDB();
@@ -15,9 +17,11 @@ try {
     if ($count) {
         echo "<div class='container'><h3>These cars have been rented on ".$_POST['d'].":</h3></div>";
         buildTable($arr, $data);
+        echo"</table></div>";
     } else {
-        echo "uh oh";
+        echo "<div class='container'><h3>No cars have been rented today</h3></div>";
     }
+
 } catch (PDOException $e) {
     echo '{"error":{"text":' . $e->getMessage() . '}}';
 }
