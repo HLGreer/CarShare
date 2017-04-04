@@ -21,7 +21,12 @@ if (isset($_POST['resDate']) & isset($_POST['carSelect'])) {
         $query->bindParam("carSelect", $_POST['carSelect'], PDO::PARAM_STR);
         $query->bindParam("memberID", $_SESSION['memberID'], PDO::PARAM_STR);
         $query->bindParam("pickUpDate", $_POST['resDate'], PDO::PARAM_STR);
-        $query->bindParam("dropOffDate", $_POST['dropdate'], PDO::PARAM_STR);
+        if (isset($_POST['dropdate'])) {
+            $d = $_POST['dropdate'];
+        } else {
+            $d = $date->format('Y-m-d');
+        }
+        $query->bindParam("dropOffDate", $d, PDO::PARAM_STR);
         $code = 698;
         $query->bindParam("accessCode", $code, PDO::PARAM_STR );
         if (isset($_POST['rentDuration'])) {

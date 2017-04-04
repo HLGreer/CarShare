@@ -117,6 +117,10 @@
                     <td><strong>Total</strong></td>
                     <td><strong>$<?php echo $total ?></strong></td>
                 </tr>
+                <tr>
+                    <td> </td>
+                    <td> </td>
+                    <td><form><input type="button" value="Send Invoice"></form></td>
                 </tbody>
             </table>
         </div>

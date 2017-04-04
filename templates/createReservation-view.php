@@ -5,7 +5,7 @@
         <label for="pickupDate">Pickup Date</label>
             <input type="date" name="resDate">
         <label for="rentDuration">For how many days?</label>
-            <input type="number" name="rentDuration" min="1">
+            <input type="number" name="rentDuration" min="1" required/>
         <div class="form-group">
             <label for="sel1">Select list:</label>
             <select class="form-control" id="sel1" name="lot">

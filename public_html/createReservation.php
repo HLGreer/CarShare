@@ -4,8 +4,8 @@ require("../includes/config.php");
 
 
 
-if ((isset($_POST['resDate']) & (isset($_POST['lot']))) & isset($_POST['rentDuration'])) {
-    //echo $_POST['rentDuration'];
+if ((isset($_POST['resDate']) & (isset($_POST['lot']))) & isset($_POST['rentDuration']) & $_POST['rentDuration'] !== "") {
+    echo $_POST['rentDuration'];
 //echo print_r($_POST['resDate']);
     $dropdate = new DateTime($_POST['resDate']);
     $dateAddString = 'P' . $_POST['rentDuration'] . 'D';
