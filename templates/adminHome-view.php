@@ -9,5 +9,7 @@
 <div>
     <h2>This is the ADMIN home.</h2>
     <h4>Options to add a car to your fleet, reply to a comment, view reservations and more here!</h4>
+    <br>
+    <h3>Here are the most and least rented cars</h3>
 </div>
 
