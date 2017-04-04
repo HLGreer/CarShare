@@ -13,7 +13,7 @@ session_destroy();
 <script type="text/javascript">
     setTimeout(function () {
         window.location.href = 'index.php';
-    },5000)
+    },3000)
 </script>
 
 
