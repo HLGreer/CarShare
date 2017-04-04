@@ -5,7 +5,7 @@ $tbl_name = "rentalcomments";
 
 try {
     $db = getDB();
-
+    echo $_POST['d'];
     //Find VIN based using reservationNUM and reservation
     $query = $db->prepare("SELECT VIN from reservation WHERE reservationNUM=:reservationNUM;");
     $query->bindParam(":reservationNUM", $_POST['reservationNUM'], PDO::PARAM_INT);
