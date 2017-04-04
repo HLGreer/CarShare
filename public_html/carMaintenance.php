@@ -23,7 +23,7 @@ try {
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_OBJ);
     $header = array('VIN', 'Status');
-    echo "<br><h3>Cars in need of Repairs:</h3>";
+    echo "<div class='container'><br><h3>Cars in need of Repairs:</h3></div>";
     buildTable($header,$result);
     $conn=null;
 
